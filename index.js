@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended:false}));
 // app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
+    origin: ['http://localhost:5173', 'http://127.0.0.1:5173','http://amazingbook.space','https://amazingbook.space'],
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
     credentials: true
@@ -21,7 +21,7 @@ app.use(cors({
  app.use('/uploads', express.static('uploads')); // Разрешаем доступ к папке uploads
 // Дополнительная настройка CORS
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+    res.header('Access-Control-Allow-Origin', 'http://amazingbook.space');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
 });
